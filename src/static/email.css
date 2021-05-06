@@ -1,0 +1,16 @@
+body {
+    color: #517c8f;
+    margin: 15px;
+    background: #86c4df;
+    display:grid;
+  }
+  .display-none {
+    display: none;
+  }
+  .fill {
+    display: block;
+    width: 100%;
+  }
+  textarea {
+    resize: vertical;
+  }

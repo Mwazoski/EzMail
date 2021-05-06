@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Instalación de Herramientas &mdash; documentación de EasyGmail - Release 1.0</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Índice"
+              href="../genindex.html"/>
+        <link rel="search" title="Búsqueda" href="../search.html"/>
+    <link rel="top" title="documentación de EasyGmail - Release 1.0" href="../index.html"/>
+        <link rel="next" title="Autores" href="autores.html"/>
+        <link rel="prev" title="Documentación de EasyGmail" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> EasyGmail
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Indice:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Instalación de Herramientas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#github">GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instalacion">Instalación</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#venv">Venv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#base-de-datos">Base de Datos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="autores.html">Autores</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">EasyGmail</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Instalación de Herramientas</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/documentos/instalacion.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="instalacion-de-herramientas">
+<h1>Instalación de Herramientas<a class="headerlink" href="#instalacion-de-herramientas" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="github">
+<h2>GitHub<a class="headerlink" href="#github" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Esta APIRest que se encarga de enviar correos a través del servicio Gmail, podemos integrarla en cualquier servicio web.
+En esta ocasión realizaremos un sencillo login, con los que simularemos la entrada de un usuario a su cuenta y, a continuación, simularemos
+una interfaz de envio de mensajes por correo.</p>
+<p>Una vez accedemos al repositorio, encontraremos un árbol de directorios</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>docs</p></li>
+<li><p>source</p></li>
+</ul>
+</div></blockquote>
+<dl>
+<dt>Docs</dt><dd><p>Tiene todo lo relacionado con la documentación del software, tanto la generación automatica de la documentación interna
+a través de la herramienta <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphynx</a>, que permite auto-generar código de Python siguiendo simplemente unos patrones de comentado
+de código, como la generación del HTML y Latex del resto de tipos de documentación.</p>
+<p>Dejando la documentación expuesta al público, se facilita para el próximo desarrollador de un proyecto abierto como este, la posibilidad
+de seguir contribuyendo, no solo con la parte del código, si también documentando todas las nuevas características que se va añadiendo a
+esta APIRest.</p>
+<p>Todo esto tiene una intención meramente expositiva, puesto que este proyecto dudo que se siga desarrollando.</p>
+</dd>
+<dt>Source</dt><dd><p>En el directorio source encontramos:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Los templates HTML</p></li>
+<li><p>Base de Datos Sqlite3</p></li>
+<li><p>Scripts <strong>GmailAPI.py</strong> y <strong>Sql.py</strong></p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</div>
+<div class="section" id="instalacion">
+<h2>Instalación<a class="headerlink" href="#instalacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Lo primero que realizaremos para manejar esta app será un <cite>git clone</cite></p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/Mwazoski/Bottle-SD.git
+</pre></div>
+</div>
+<p>Una vez hallamos descargado el proyecto, crearemos nuestro entorno virtual para poder, más tarde, realizar la instalación de todos
+los módulos necesarios para manejar tanto la documentación, como el código.</p>
+<p>Creación de un entorno Virtual <a class="reference internal" href="#venv">Venv</a></p>
+<hr class="docutils" />
+<p>Cuando hayamos creado el espacio virtual y estemos dentro de él, tendremos que instalar mediante la herramienta <strong>pip</strong>, todas las
+dependencias que esta APIRest requiere. Simplemento ejecutamos el comando</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
+</pre></div>
+</div>
+<p>Este cogerá del archivo <em>requirements.txt</em> todas las dependencias que se requieren, includas la especificación de sus versiones.</p>
+<p>Una vez hemos instalado todas las dependencias, estaremos listos para ir a la carpeta <strong>/source</strong> y poder lanzar el programa,
+esto lo realizaremos mediante la invocación del intérprete python.</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span><span class="c1"># Para lanzar la API con flask run.</span>
+
+$ <span class="nb">export</span> <span class="nv">FLASK_APP</span> <span class="o">=</span> GmailAPI.py
+
+<span class="c1"># Para lanzar la API con python.</span>
+
+$ python GmailAPI.py
+</pre></div>
+</div>
+<div class="section" id="venv">
+<h3>Venv<a class="headerlink" href="#venv" title="Enlazar permanentemente con este título">¶</a></h3>
+<p><strong>Introducción</strong></p>
+<p>Un entorno virtual de Python es un ambiente creado con el objetivo de aislar recursos como librerías y entorno de ejecución,
+del sistema principal o de otros entornos virtuales. Lo anterior significa que en el mismo sistema, maquina o computadora,
+es posible tener instaladas multiples versiones de una misma librería sin crear ningún tipo de conflicto.</p>
+<p>Para poder utilizar este simple pero poderoso concepto es necesario instalar una utilidad que permita gestionar la creación
+y utilización de dichos entornos virtuales llamada venv.</p>
+<p>El módulo venv proporciona soporte para crear «entornos virtuales» ligeros con sus propios directorios de ubicación,
+aislados opcionalmente de los directorios de ubicación del sistema. Cada entorno virtual tiene su propio binario Python
+(que coincide con la versión del binario que se utilizó para crear este entorno) y puede tener su propio conjunto independiente
+de paquetes Python instalados en sus directorios de ubicación.</p>
+<p><strong>Como usar Venv</strong></p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span><span class="c1"># python3 -m venv carpeta_destino</span>
+
+$ python3 -m venv mientorno
+</pre></div>
+</div>
+<p>Una vez se ha creado el entorno virtual, debemos entrar en dicho entorno.</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> mientorno/bin/activate
+</pre></div>
+</div>
+<p>Una vez ejecutado este comando, estaremos dentro del entorno virtual, sabremos esto ya que nuestra consola
+ahora aparecerá de la siguiente manera.</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>mientorno<span class="o">)</span> user@user:~/
+</pre></div>
+</div>
+</div>
+<div class="section" id="base-de-datos">
+<h3>Base de Datos<a class="headerlink" href="#base-de-datos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Como Base de Datos, hemos empleado sqlite3. <a class="reference external" href="https://docs.python.org/es/3.10/library/sqlite3.html">SQLite</a> , es una biblioteca de
+C que provee una base de datos ligera basada en disco que no requiere un proceso de servidor separado y permite acceder
+a la base de datos usando una variación no estándar del lenguaje de consulta SQL. Esta se convierte en una Base de Datos
+perfecta para proyectos pequeños como este.</p>
+<p>Para realizar una modificación en la Base de Datos, iremos al archivo <strong>runsql.py</strong>. Aqui encontraremos
+este código:</p>
+<div class="highlight-PYTHON notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="k">def</span> <span class="nf">databasecreate</span><span class="p">():</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Función que se encarga de crear en un primer lugar una base de datos para poder crear</span>
+<span class="sd">    el esquema de las tablas en la APIRest. Esta se encarga simplemente de facilitar la</span>
+<span class="sd">    creación de la Base de Datos *Padre* sobre la cual poder introducir más información</span>
+<span class="sd">        :param name: conn</span>
+<span class="sd">                    Objeto de sql que se encarga de realizar todas las operaciones con la Base de Datos sqlite3.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creando la base de datos&quot;</span><span class="p">);</span>
+
+    <span class="c1"># TABLA DE USUARIOS</span>
+
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;gmailapi.db&#39;</span><span class="p">)</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE usuarios (nombre char(50), correo char(60) PRIMARY KEY NOT NULL)&quot;</span><span class="p">)</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO usuarios (nombre, correo) VALUES (&#39;default&#39;,&#39;default@uca.es&#39;) &quot;</span><span class="p">)</span>
+
+    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Base de datos creada&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+    <span class="n">databasecreate</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p><strong>No cambiar el esquema de las tablas, solo la información en ellas.</strong></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="autores.html" class="btn btn-neutral float-right" title="Autores" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Documentación de EasyGmail" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Alvaro , Marina , Manuel y Zuleima.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'Release 1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

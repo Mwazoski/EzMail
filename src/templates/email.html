@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Email Sender</title>
+<link rel="stylesheet" type="text/css" href="/static/email.css">
+<link rel="stylesheet" type="text/css" href="/static/lib/application.css">
+<link rel="stylesheet" type="text/css" href="/static/lib/alertify.css">
+
+</head>
+<body>
+    <div class="grid">
+        <div class="grid__col--12">
+          <form action="/message_send" id="contact-form" method="POST">
+            <label for="inputName">Asunto</label>
+            <input class="form__input" id="inputName" type="text" placeholder="Escribe un asunto" name="asunto"/>
+            <label for="inputEmail">Email Destino</label>
+            <br>
+            <select class = "form__input" id="inputEmail" aria-placeholder="Selecciona un correo" name="destinatario">
+              {% for i in direcciones: %}
+                <option>{{ i[0] }}</option>
+              {% endfor %}
+            </select>
+            <br>
+            <label for="inputMessage">Mensaje</label>
+            <textarea class="form__input" id="inputMessage" rows="3" placeholder="Escribe un mensaje" name="mensaje"></textarea>
+            <input class="display-none" type="text" name="_gotcha"/>
+            <input class="btn--default fill" id="email-submit-btn" type="submit" value="Send"/>
+          </form>
+        </div>
+    </div>
+      <script type="text/javascript" src="/static/email.js"></script>
+      <script type="text/javascript" src="/static/alertify.js"></script>
+      <script type="text/javascript" src="/static/lib/jquery-2.2.4.min.js"></script>
+
+
+</body>
+</html> 

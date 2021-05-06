@@ -14,7 +14,9 @@ una interfaz de envio de mensajes por correo.
 Una vez accedemos al repositorio, encontraremos un árbol de directorios
     
     - docs
-    - source 
+    - source
+    - requirements.txt
+    - venv
 
 
 Docs
@@ -42,7 +44,7 @@ Lo primero que realizaremos para manejar esta app será un `git clone`
 
 .. code-block:: BASH
 
-    $ git clone https://github.com/Mwazoski/Bottle-SD.git
+    $ git clone https://github.com/Mwazoski/EzMail.git
 
 Una vez hallamos descargado el proyecto, crearemos nuestro entorno virtual para poder, más tarde, realizar la instalación de todos 
 los módulos necesarios para manejar tanto la documentación, como el código.

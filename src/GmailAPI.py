@@ -17,7 +17,7 @@ app = Flask(__name__)       # Iniciamos la aplicacion de Flask
 usuario = ["a" , "a"]
 
 @app.route('/')
-def hello_world():
+def index():
 
     """
     Ruta que interpreta la pagina principal donde se permite realizar tanto un registro de correos electrónicos

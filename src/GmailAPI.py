@@ -18,10 +18,37 @@ usuario = ["a" , "a"]
 
 @app.route('/')
 def hello_world():
+
+    """
+    Ruta que interpreta la pagina principal donde se permite realizar tanto un registro de correos electrónicos
+    que podremos seleccionar en el momento de mandar un mensaje por correo.
+    """
+
     return render_template('index.html')
 
 @app.route('/login_done', methods=["GET","POST"])
 def login_done():
+
+    """
+    Ruta que interpreta el apartado de mensajería una vez que los datos de inicio de sesión son correctos.
+        
+        :param email:
+                    Email que se ha proporcionado en el logeo de sesión
+        :param password:
+                    password que se ha proporcionado en el logeo de sesión
+        :param user:
+                    Información relativa al usuario que proviene del login
+        :param conn:
+                    Objeto sql para realizar las conexiones a la base de datos estipulada
+        :param c:
+                    Cursos de la conexión sql
+        :param query:
+                    Query que se encarga de realizar la operacion adecuada para la consulta sql
+        :param direcciones:
+                    Direcciones de correo electronico que estan almacenadas en la base de datos y que serviran 
+                    para proporcionar todos los destinatarios disponibles
+    """
+
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
@@ -40,6 +67,24 @@ def login_done():
 
 @app.route('/message_send', methods=["GET","POST"])
 def message_send():
+
+    """
+    Ruta que interpreta el apartado de mensajería una vez que el mensaje se ha enviado correctamente, esta parte
+    es la que permite que el cliente se conecte con la API para realizar las operaciones de envio de mensajes.
+    
+        :param asunto:
+                    Asunto que se ha proporcionado en el mensaje de correo
+        :param destinatario:
+                    Destinatario que se ha proporcionado en el mensaje de correo.
+        :param mensaje:
+                    Objeto mensaje que se encarga de mandar el correo con un asunto, un destinatario y un formato html
+        :param parte_html:
+                    Cuerpo, en html, del mensaje
+        :param context:
+                    Conexión que se realiza con la API para que se pueda mandar el correo, a este se le proporciona un logeo
+                    de sesión, el asunto, destinatario y cuerpo del mensaje.
+    """
+
     if request.method == 'POST':
         
         asunto = request.form['asunto']
@@ -72,6 +117,21 @@ def message_send():
 
 @app.route('/register_done', methods=["GET","POST"])
 def register_done():
+
+    """
+    Ruta que interpreta el apartado la pagina principal una vez que el registro de un destinatario se ha realizado con éxito.
+    
+        :param email:
+                    Email que se ha proporcionado en el registro de destinatario
+        :param name:
+                    Nombre que se ha proporcionado en el registro de destinatario
+        :param conn:
+                    Objeto sql para realizar las conexiones a la base de datos estipulada
+        :param c:
+                    Cursos de la conexión sql
+        :param query:
+                    Query que se encarga de realizar la operacion adecuada para la consulta sql
+    """
     
     try:
         if request.method == 'POST':

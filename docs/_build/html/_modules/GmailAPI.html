@@ -84,6 +84,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../documentos/instalacion.html">Instalación de Herramientas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../documentos/autores.html">Autores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentos/ejecucion.html">Prerequisitos de la App</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../documentos/codigo.html">Codigo EzMail</a></li>
 </ul>
 
@@ -171,13 +172,35 @@
 <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Ruta que interpreta la pagina principal en la que podemos logearnos como usuarios de Google</span>
+<span class="sd">    Ruta que interpreta la pagina principal donde se permite realizar tanto un registro de correos electrónicos</span>
+<span class="sd">    que podremos seleccionar en el momento de mandar un mensaje por correo.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="login_done"><a class="viewcode-back" href="../documentos/codigo.html#GmailAPI.login_done">[documentos]</a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/login_done&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="s2">&quot;POST&quot;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">login_done</span><span class="p">():</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Ruta que interpreta el apartado de mensajería una vez que los datos de inicio de sesión son correctos.</span>
+<span class="sd">        </span>
+<span class="sd">        :param email:</span>
+<span class="sd">                    Email que se ha proporcionado en el logeo de sesión</span>
+<span class="sd">        :param password:</span>
+<span class="sd">                    password que se ha proporcionado en el logeo de sesión</span>
+<span class="sd">        :param user:</span>
+<span class="sd">                    Información relativa al usuario que proviene del login</span>
+<span class="sd">        :param conn:</span>
+<span class="sd">                    Objeto sql para realizar las conexiones a la base de datos estipulada</span>
+<span class="sd">        :param c:</span>
+<span class="sd">                    Cursos de la conexión sql</span>
+<span class="sd">        :param query:</span>
+<span class="sd">                    Query que se encarga de realizar la operacion adecuada para la consulta sql</span>
+<span class="sd">        :param direcciones:</span>
+<span class="sd">                    Direcciones de correo electronico que estan almacenadas en la base de datos y que serviran </span>
+<span class="sd">                    para proporcionar todos los destinatarios disponibles</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
         <span class="n">email</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span>
         <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span>
@@ -196,6 +219,24 @@
 
 <div class="viewcode-block" id="message_send"><a class="viewcode-back" href="../documentos/codigo.html#GmailAPI.message_send">[documentos]</a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/message_send&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="s2">&quot;POST&quot;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">message_send</span><span class="p">():</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Ruta que interpreta el apartado de mensajería una vez que el mensaje se ha enviado correctamente, esta parte</span>
+<span class="sd">    es la que permite que el cliente se conecte con la API para realizar las operaciones de envio de mensajes.</span>
+<span class="sd">    </span>
+<span class="sd">        :param asunto:</span>
+<span class="sd">                    Asunto que se ha proporcionado en el mensaje de correo</span>
+<span class="sd">        :param destinatario:</span>
+<span class="sd">                    Destinatario que se ha proporcionado en el mensaje de correo.</span>
+<span class="sd">        :param mensaje:</span>
+<span class="sd">                    Objeto mensaje que se encarga de mandar el correo con un asunto, un destinatario y un formato html</span>
+<span class="sd">        :param parte_html:</span>
+<span class="sd">                    Cuerpo, en html, del mensaje</span>
+<span class="sd">        :param context:</span>
+<span class="sd">                    Conexión que se realiza con la API para que se pueda mandar el correo, a este se le proporciona un logeo</span>
+<span class="sd">                    de sesión, el asunto, destinatario y cuerpo del mensaje.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
         
         <span class="n">asunto</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;asunto&#39;</span><span class="p">]</span>
@@ -228,6 +269,21 @@
 
 <div class="viewcode-block" id="register_done"><a class="viewcode-back" href="../documentos/codigo.html#GmailAPI.register_done">[documentos]</a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/register_done&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="s2">&quot;POST&quot;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">register_done</span><span class="p">():</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Ruta que interpreta el apartado la pagina principal una vez que el registro de un destinatario se ha realizado con éxito.</span>
+<span class="sd">    </span>
+<span class="sd">        :param email:</span>
+<span class="sd">                    Email que se ha proporcionado en el registro de destinatario</span>
+<span class="sd">        :param name:</span>
+<span class="sd">                    Nombre que se ha proporcionado en el registro de destinatario</span>
+<span class="sd">        :param conn:</span>
+<span class="sd">                    Objeto sql para realizar las conexiones a la base de datos estipulada</span>
+<span class="sd">        :param c:</span>
+<span class="sd">                    Cursos de la conexión sql</span>
+<span class="sd">        :param query:</span>
+<span class="sd">                    Query que se encarga de realizar la operacion adecuada para la consulta sql</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>

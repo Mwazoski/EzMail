@@ -34,7 +34,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Búsqueda" href="../search.html"/>
     <link rel="top" title="documentación de EasyGmail - Release 1.0" href="../index.html"/>
-        <link rel="prev" title="Autores" href="autores.html"/> 
+        <link rel="prev" title="Prerequisitos de la App" href="ejecucion.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,6 +84,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="instalacion.html">Instalación de Herramientas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="autores.html">Autores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ejecucion.html">Prerequisitos de la App</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Codigo EzMail</a></li>
 </ul>
 
@@ -153,23 +154,93 @@
 <dl class="py function">
 <dt id="GmailAPI.hello_world">
 <code class="sig-prename descclassname"><span class="pre">GmailAPI.</span></code><code class="sig-name descname"><span class="pre">hello_world</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/GmailAPI.html#hello_world"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#GmailAPI.hello_world" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Ruta que interpreta la pagina principal en la que podemos logearnos como usuarios de Google</p>
+<dd><p>Ruta que interpreta la pagina principal donde se permite realizar tanto un registro de correos electrónicos
+que podremos seleccionar en el momento de mandar un mensaje por correo.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="GmailAPI.login_done">
 <code class="sig-prename descclassname"><span class="pre">GmailAPI.</span></code><code class="sig-name descname"><span class="pre">login_done</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/GmailAPI.html#login_done"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#GmailAPI.login_done" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Ruta que interpreta el apartado de mensajería una vez que los datos de inicio de sesión son correctos.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param email</dt>
+<dd class="field-odd"><p>Email que se ha proporcionado en el logeo de sesión</p>
+</dd>
+<dt class="field-even">param password</dt>
+<dd class="field-even"><p>password que se ha proporcionado en el logeo de sesión</p>
+</dd>
+<dt class="field-odd">param user</dt>
+<dd class="field-odd"><p>Información relativa al usuario que proviene del login</p>
+</dd>
+<dt class="field-even">param conn</dt>
+<dd class="field-even"><p>Objeto sql para realizar las conexiones a la base de datos estipulada</p>
+</dd>
+<dt class="field-odd">param c</dt>
+<dd class="field-odd"><p>Cursos de la conexión sql</p>
+</dd>
+<dt class="field-even">param query</dt>
+<dd class="field-even"><p>Query que se encarga de realizar la operacion adecuada para la consulta sql</p>
+</dd>
+<dt class="field-odd">param direcciones</dt>
+<dd class="field-odd"><p>Direcciones de correo electronico que estan almacenadas en la base de datos y que serviran
+para proporcionar todos los destinatarios disponibles</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
 
 <dl class="py function">
 <dt id="GmailAPI.message_send">
 <code class="sig-prename descclassname"><span class="pre">GmailAPI.</span></code><code class="sig-name descname"><span class="pre">message_send</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/GmailAPI.html#message_send"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#GmailAPI.message_send" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Ruta que interpreta el apartado de mensajería una vez que el mensaje se ha enviado correctamente, esta parte
+es la que permite que el cliente se conecte con la API para realizar las operaciones de envio de mensajes.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param asunto</dt>
+<dd class="field-odd"><p>Asunto que se ha proporcionado en el mensaje de correo</p>
+</dd>
+<dt class="field-even">param destinatario</dt>
+<dd class="field-even"><p>Destinatario que se ha proporcionado en el mensaje de correo.</p>
+</dd>
+<dt class="field-odd">param mensaje</dt>
+<dd class="field-odd"><p>Objeto mensaje que se encarga de mandar el correo con un asunto, un destinatario y un formato html</p>
+</dd>
+<dt class="field-even">param parte_html</dt>
+<dd class="field-even"><p>Cuerpo, en html, del mensaje</p>
+</dd>
+<dt class="field-odd">param context</dt>
+<dd class="field-odd"><p>Conexión que se realiza con la API para que se pueda mandar el correo, a este se le proporciona un logeo
+de sesión, el asunto, destinatario y cuerpo del mensaje.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
 
 <dl class="py function">
 <dt id="GmailAPI.register_done">
 <code class="sig-prename descclassname"><span class="pre">GmailAPI.</span></code><code class="sig-name descname"><span class="pre">register_done</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/GmailAPI.html#register_done"><span class="viewcode-link"><span class="pre">[fuente]</span></span></a><a class="headerlink" href="#GmailAPI.register_done" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Ruta que interpreta el apartado la pagina principal una vez que el registro de un destinatario se ha realizado con éxito.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param email</dt>
+<dd class="field-odd"><p>Email que se ha proporcionado en el registro de destinatario</p>
+</dd>
+<dt class="field-even">param name</dt>
+<dd class="field-even"><p>Nombre que se ha proporcionado en el registro de destinatario</p>
+</dd>
+<dt class="field-odd">param conn</dt>
+<dd class="field-odd"><p>Objeto sql para realizar las conexiones a la base de datos estipulada</p>
+</dd>
+<dt class="field-even">param c</dt>
+<dd class="field-even"><p>Cursos de la conexión sql</p>
+</dd>
+<dt class="field-odd">param query</dt>
+<dd class="field-odd"><p>Query que se encarga de realizar la operacion adecuada para la consulta sql</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
 
 </div>
 
@@ -181,7 +252,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="autores.html" class="btn btn-neutral" title="Autores" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ejecucion.html" class="btn btn-neutral" title="Prerequisitos de la App" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

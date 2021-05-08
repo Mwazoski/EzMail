@@ -1,0 +1,26 @@
+Uso de la API 
+===========================
+
+A continuación vamos a ofrecer una pequeña explicación de que sucede mientras usamos la API. Cuando la ejecutamos, se abre
+ante nosotros una pestaña en la que podemos hacer dos cosas diferentes:
+
+Iniciar sesión
+++++++++++++++
+
+Nos ofrece la opción de iniciar sesión con una cuenta de correo electrónico que ya exista. 
+Podemos usar tanto una cuenta personal como una cuenta profesional(cuenta de correo electrónico de la UCA,...). 
+Para que el inicio de sesión no sea erróneo debemos tener habilitado en el correo que vayamos a usar la opción de acceso de aplicaciones poco seguras.
+
+En este apartado, debemos introducir nuestro correo y la contraseña que usamos normalmente para acceder. 
+Una vez hecho, nos mostrará en pantalla una página diferente en la que podemos añadir un asunto al correo, 
+elegir la dirección destinataria del correo de una lista que se mostrará mediante un menú desplegable, y finalmente, 
+escribir un mensaje de texto.
+
+Registro
++++++++++
+
+Esta opción está destinada a recoger la dirección de los correos con los que posteriormente nos comunicaremos cuando se inicie sesión. Estos correos se almacenarán en una base de datos para garantizar la persistencia de estos. Todo esto se reflejará en un menú desplegable con el que se podrá solo seleccionar los correos ya registrados anteriormente
+
+
+.. toctree::
+   :maxdepth: 4

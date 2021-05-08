@@ -85,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../documentos/instalacion.html">Instalación de Herramientas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../documentos/autores.html">Autores</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../documentos/ejecucion.html">Prerequisitos de la App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentos/uso.html">Uso de la API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../documentos/codigo.html">Codigo EzMail</a></li>
 </ul>
 
@@ -168,8 +169,8 @@
 
 <span class="n">usuario</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span> <span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]</span>
 
-<div class="viewcode-block" id="hello_world"><a class="viewcode-back" href="../documentos/codigo.html#GmailAPI.hello_world">[documentos]</a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+<div class="viewcode-block" id="index"><a class="viewcode-back" href="../documentos/codigo.html#GmailAPI.index">[documentos]</a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Ruta que interpreta la pagina principal donde se permite realizar tanto un registro de correos electrónicos</span>
@@ -248,13 +249,7 @@
         <span class="n">mensaje</span><span class="p">[</span><span class="s2">&quot;From&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">usuario</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">mensaje</span><span class="p">[</span><span class="s2">&quot;To&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">destinatario</span> 
         
-        <span class="n">html</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        &lt;html&gt;</span>
-<span class="s2">        &lt;body&gt;</span>
-<span class="s2">            &lt;p&gt;</span><span class="si">{</span><span class="n">texto</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
-<span class="s2">        &lt;/body&gt;</span>
-<span class="s2">        &lt;/html&gt;</span>
-<span class="s2">        &quot;&quot;&quot;</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;message.html&#39;</span><span class="p">,</span> <span class="n">mensaje</span> <span class="o">=</span> <span class="n">texto</span><span class="p">,</span> <span class="n">origen</span> <span class="o">=</span> <span class="n">usuario</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">,</span> <span class="n">destino</span> <span class="o">=</span> <span class="n">destinatario</span><span class="p">)</span>
 
         <span class="n">parte_html</span> <span class="o">=</span> <span class="n">MIMEText</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="p">)</span>
         <span class="n">mensaje</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">parte_html</span><span class="p">)</span>

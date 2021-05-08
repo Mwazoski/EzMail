@@ -96,13 +96,7 @@ def message_send():
         mensaje["From"] = usuario[1]
         mensaje["To"] = destinatario 
         
-        html = f"""
-        <html>
-        <body>
-            <p>{texto}</p>
-        </body>
-        </html>
-        """
+        html = render_template('message.html', mensaje = texto, origen = usuario[0] , destino = destinatario)
 
         parte_html = MIMEText(html, "html")
         mensaje.attach(parte_html)

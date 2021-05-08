@@ -17,7 +17,7 @@ def databasecreate():
     # TABLA DE USUARIOS
 
     conn = sqlite3.connect('gmailapi.db')
-    conn.execute("CREATE TABLE usuarios (nombre char(50), correo char(60) PRIMARY KEY NOT NULL)")
+    conn.execute("CREATE TABLE usuarios (nombre char(50) NOT NULL, correo char(60) PRIMARY KEY NOT NULL)")
     conn.execute("INSERT INTO usuarios (nombre, correo) VALUES ('default','default@uca.es') ")
     
     conn.commit()

@@ -17,7 +17,7 @@ app = Flask(__name__)       # Iniciamos la aplicacion de Flask
 usuario = ["a" , "a"]
 
 @app.route('/')
-def hello_world():
+def index():
 
     """
     Ruta que interpreta la pagina principal donde se permite realizar tanto un registro de correos electrónicos
@@ -96,13 +96,7 @@ def message_send():
         mensaje["From"] = usuario[1]
         mensaje["To"] = destinatario 
         
-        html = f"""
-        <html>
-        <body>
-            <p>{texto}</p>
-        </body>
-        </html>
-        """
+        html = render_template('message.html', mensaje = texto, origen = usuario[0] , destino = destinatario)
 
         parte_html = MIMEText(html, "html")
         mensaje.attach(parte_html)
